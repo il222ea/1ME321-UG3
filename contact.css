@@ -1,0 +1,752 @@
+@charset "UTF-8";
+
+
+html, body{
+    height: 100%;
+    font-family: 'Fira sans', sans-serif;
+    font-size: 16px;
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body{
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: min-content min-content auto min-content;
+    grid-template-areas: 
+    "   nav   "
+    "  header "
+    "   main  "
+    "  footer "
+    ;
+
+    background: linear-gradient(
+        to right,
+        #fbadba99,
+        #ffc0cb80
+    );
+    padding:0;
+    margin:0;
+}
+
+.navbar {
+    grid-area: nav;
+    width: 100%;
+    display: flex;
+    background-image: -webkit-linear-gradient(#462523 0%,
+            #cb9b51 22%,
+            #f6e27a 45%,
+            #f6f2c0 50%,
+            #f6e27a 55%,
+            #cb9b51 78%,
+            #462523 100%);
+    height: 55px;
+    justify-content: center;
+}
+
+.navbar ul {
+    display: flex;
+    border-top: 0;
+    padding: 0;
+    margin-top: 3px;
+    gap: 50px;
+    list-style-type: none;
+}
+
+.navbar li a {
+    display: flex;
+    margin: 10px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #462523;
+    text-decoration: none;
+
+}
+
+.navbar li a {
+    color: #462523;
+}
+
+.navbar li a:hover {
+    color: #e84393;
+}
+
+/*-------navbar-icons--------*/
+
+.navbar .icons {
+    display: inline-flex;
+}
+
+.navbar .icons a {
+    margin-top: 15px;
+    font-size: 1.3rem;
+    color: #333;
+    margin-left: 2rem;
+    text-decoration: none;
+
+}
+
+.navbar .icons a:hover {
+    color: #e84393;
+}
+
+.navbar .icons .fa-heart{
+    color:#e84393;
+}
+
+
+/*-------DropDown-submenu--*/
+
+
+ul li ul.dropdown li{
+    display: block;
+    border-bottom: 2px dotted;
+}
+
+ul li ul.dropdown{
+    position: absolute;
+    margin-top: -10px;
+    align-items: center;
+    z-index: 999;
+    display: none;
+    transition-duration: 2s;
+    margin-left: 7px;
+}
+
+ul.dropdown a{
+    font-size: 1.3rem;
+    justify-content: center;
+    color: #462523;    
+}
+
+ul li:hover ul.dropdown{
+    display: block;
+    color:#462523;
+}
+
+
+/*------navbar-end--------*/
+
+header #logo {
+    grid-area: header;
+    width: 80px;
+    position: fixed;
+    z-index:999;
+}
+
+/*-----Search-bar-------*/
+
+.search-box{
+    float:right;
+    height: 30px;
+    border-color:#cb9b51;
+    outline: none;
+    border-radius: 40px;
+    background-image:linear-gradient(
+        to top,
+        #462523 0%,
+        #cb9b51 22%,
+        #f6e27a 45%,
+        #f6f2c0 50%,
+        #f6e27a 55%,
+        #cb9b51 78%,
+        #462523 100%
+    );
+    padding: 10px;
+}
+
+.search-box input #placeholder{
+    font-size: 25px;
+
+ }   
+.search-box:hover > .search-txt{
+    width: 240px;
+    padding: 0 6px;
+}
+
+.search-box:hover > .search-btn{
+    background-image:linear-gradient(
+        to left,
+        hotpink,
+        antiquewhite
+    );
+}
+
+.search-btn{
+    cursor:pointer;
+    float:right;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-image:linear-gradient(
+        to left,
+        hotpink,
+        antiquewhite
+    );
+    margin-top:-2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    text-decoration: none;
+    font-size: 23px;
+    color: #cb9b51;
+}
+
+.search-txt{
+    border:none;
+    margin-top: -6px;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: #462523;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+}
+
+.searchbar .fa{
+    font-size: 20px;
+}
+
+
+/*--------Search-box-end------------*/
+
+.contact i{
+    cursor:pointer;
+}
+
+ .fa .fas{
+    cursor: pointer;
+    color: #ff68b3;
+    text-decoration: none;
+}
+
+
+/* -----  Hela rutan ----- */
+.contact-container{
+    grid-area: main;
+    width: 80%;
+    margin: auto;
+    display:flex;
+    flex-wrap: wrap;
+    padding-top:0;
+    padding-left:0;
+    margin-top:50px;
+}
+
+.contact{
+    grid-area:main;
+    padding: 40px 30px;
+    margin:0;
+}
+
+/* ----- KONTAKTINFORMATION ----- */
+.contact:nth-child(1){
+    flex:32%;
+    background: url(/images/Chocolate-shop2.jpg);
+}
+
+/* ----- SKICKA ETT MEDDELANDE ------ */
+.contact:nth-child(2){
+    flex:43%;
+    background: linear-gradient(
+        to right,
+        #fbadba,
+        pink
+    );
+}
+
+/* ---- Meddelande - fälten  ----- */
+.contact:nth-child(3){
+    flex : 25%;
+    padding:0;
+
+}
+
+.contact h1{
+    font-size: 24px;
+    color:#fff;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+
+/*---- Labels ----- */
+.contact h2{
+    font-size: 20px;
+    color:#fff;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+
+/* ----- Kontakt-ikonerna ---- */
+.contact h2 i{
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-right: 10px;
+    background: linear-gradient(
+        to right,
+        darksalmon,
+        pink
+    );
+    color: #282727;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 900;
+}
+
+
+/* --- Kontaktuppgifterna --- */
+.contact p{
+    color:#000;
+    margin-left: 45px;
+    font-size: 20px;
+    font-weight: 900;
+    text-decoration:underline;
+    margin-bottom: 20px;
+}
+
+.contact ul{
+    padding:0;
+    margin:0;
+}
+
+.contact ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+
+/* ----- Sociala medier ikonerna */
+.contact ul li a{
+    display: block;
+    width: 40px;
+    height: 40px; 
+    border-radius: 50px;
+    text-align: center;
+    background: linear-gradient(
+        to right,
+        darksalmon,
+        pink
+    );
+    color:#000;
+   
+}
+
+.contact ul li a i{
+    font-size: 20px;
+    line-height: 40px;
+    color: #000;
+}
+
+.contact form{
+    width: 100%;
+    height: auto;
+}
+
+.contact-input{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 1px solid #fff;
+    outline: none;
+    padding-left: 5px;
+    background: transparent;
+    color:#353535;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Fira sans', sans-serif;
+}
+
+.contact-input::placeholder{
+    color:#353535;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.contact-textarea{
+    width: 100%;
+    height: 140px;
+    margin-bottom: 20px;
+    border: 2px solid #fff;
+    outline: none;
+    padding-top: 5px;
+    padding-left: 5px;
+    background: transparent;
+    color:#353535;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Fira sans', sans-serif;
+}
+
+.contact-textarea::placeholder{
+    color:#353535;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.contact-input-btn{
+    width: 30%;
+    height: 40px;
+    border-radius: 25px;
+    border: 2px solid #fff;
+    outline: none;
+    background: transparent;
+    color:#353535;
+    font-size: 18px;
+    font-weight:bold;
+    font-family: 'Fira sans', sans-serif;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+}
+
+
+/*--------Footer------------*/
+
+footer{
+    position: relative;
+     margin-top: 150px;
+     width: 90%;
+     padding:5%;
+     display: grid;
+     grid-template-columns: 20% 20% 25% 25%;
+     grid-gap: 15px;
+     background: rgba(102, 102, 102, 0.8);
+     color: #efefef; 
+     padding-left: 5%;
+     padding-right: 5%;
+     justify-content: end;
+     align-content: end;
+     overflow-x: hidden;
+ }
+ 
+ 
+ .col-1 a{
+    display: block;
+    text-decoration: none;
+    color:#efefef;
+    margin-bottom: 10px;
+ }
+ 
+ .col-2 a{
+    text-decoration: none;
+    color:#efefef;
+    margin-bottom: 10px;   
+ }
+
+ .adr{
+    list-style-type: none;
+    padding:0;
+ }
+ 
+ .col-3 .adr li span{
+    line-height: 1.7rem;
+ }
+ 
+
+ .col-3 #time{
+    padding-top: 15px;
+ }
+ 
+ .col-3 ul{
+    padding-left:0; 
+    margin-top:0; 
+ }
+
+ .col-3 #open li{
+    list-style-type: none;
+    line-height: 1.7rem;
+ }
+ 
+ .footer div{
+     text-align: center;
+ }
+ 
+  .footer div h3{
+     font-weight: 300;
+     margin-bottom: 30px;
+     letter-spacing: 1px;
+  }
+ 
+ .map1{
+    margin-bottom: 5%;
+ }
+
+  .map1, .map2, iframe{
+    width: 250px;
+    height: 125px;
+    display:inline-block;
+  }
+ 
+  
+  .footer-mail input{
+     width: 200px;
+     height: 45px;
+     border-radius: 4px;
+     text-align: left;
+     padding-left:10px;
+     margin-top: 5px;
+     margin-bottom: 25px;
+     outline: none;
+     border: none;
+     cursor:text;
+  }
+ 
+  .footer-mail .foot-btn{
+     background: transparent;
+     border: 2px solid #fff;
+     color: #fff;
+     border-radius: 30px;
+     padding: 10px 30px;
+     font-size: 15px;
+     cursor: pointer;
+  }
+ 
+  .social-icons-footer{
+     margin-top: 30px;
+  }
+ 
+  .social-icons-footer i{
+     font-size: 22px;
+     margin: 10px;
+     cursor: pointer;
+     color:pink;
+     font-weight: bold;
+  }
+
+  
+  /* ---------  Media Queries starts here ----------- */
+
+  @media (max-width: 920px){
+ 
+    footer{
+       grid-template-columns: 1fr 1fr;
+       flex-wrap: wrap;
+       padding-left: 100px;
+    }
+
+    .navbar ul {
+        gap: 40px;
+        transition: .1s linear;
+    }
+
+    .navbar li a {
+        font-size: 1.4rem;
+        transition: .1s linear;
+        margin:9px;
+    }
+
+    .navbar ul {
+        gap: 40px;
+        transition: .1s linear;
+        margin-top: 5px;
+    }
+
+    .navbar li a {
+        font-size: 1.4rem;
+        transition: .1s linear;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .navbar ul {
+        gap: 30px;
+        transition: .1s linear;
+        margin-top: 6px;
+    }
+
+    .navbar li a {
+        font-size: 1.3rem;
+        transition: .1s linear;
+    }
+
+    .navbar .icons a{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 800px){
+
+    .navbar ul{
+        margin-top:5px;
+        gap: 30px;
+    }
+    .navbar li a{
+        margin: 11px;
+        font-size: 1.3rem;
+        transition: .1s linear;
+    }
+
+    footer{
+        padding-left:100px;
+    }
+}
+
+@media screen and (max-width: 785px) {
+
+    .navbar ul {
+        gap: 25px;
+        transition: .1s linear;
+        margin-top: 7px;
+    }
+
+    .navbar li a {
+        font-size: 1.2rem;
+        transition: .1s linear;
+    }
+
+    .navbar .icons a{
+        margin-top:15px;
+    }
+}
+
+ 
+@media screen and (max-width: 750px){
+    footer{
+        padding-left:100px;
+    }
+}
+
+@media screen and (max-width: 730px) {
+
+    .navbar ul {
+        gap: 20px;
+        transition: .1s linear;
+    }
+
+    .navbar li a {
+        font-size: 1.1rem;
+        transition: .1s linear;
+    }
+}
+
+@media screen and (max-width: 675px) {
+
+    .navbar ul {
+        gap: 15px;
+        margin-top: 8px;
+        transition: .1s linear;
+    }
+
+    .navbar li a {
+        font-size: 1rem;
+        transition: .1s linear;
+    }
+
+    .navbar .icons a{
+        font-size: 1.1rem;
+    }
+
+    .navbar .icons a {
+        padding-top: 3px;
+    }
+
+    footer{
+        grid-template-columns: 100%;
+        flex-wrap: wrap;
+        padding-left:100px;
+    }   
+}
+
+@media screen and (max-width:625px) {
+
+    .navbar ul {
+        gap: 7px;
+        margin-top: 9px;
+        transition: .1s linear;
+    }
+
+    .navbar .icons a {
+        font-size: .9rem;
+     }
+
+     footer{
+        padding-left:70px;
+    }
+}
+
+@media screen and (max-width: 600px){
+
+    .contact-container{
+     margin-left: 60px;
+}
+    .navbar .icons .fa-shopping-cart{
+        display:none;
+    }
+
+    .navbar .icons .fa-heart{
+        display:none;
+    }
+
+    .navbar .icons .fa-user{
+        display:none;
+    }
+
+    .search-box .search-txt{
+        font-size: 14px;
+    }
+
+    .navbar ul li a {
+        font-size: 1rem;
+        margin-top: 12px;
+        margin-left: 4px;
+    }
+
+    ul li ul.dropdown {
+        transition-duration: 6s;
+    }
+}
+
+@media screen and (max-width: 400px){
+    
+    main{
+        justify-content: center;
+    }
+    header{
+        margin-right: 45px;
+    }
+    .contact:nth-child(1){
+        flex:32%;
+        width:297px;
+    }
+
+    .contact:nth-child(2){
+        flex:43%;
+        width: 365px;
+    }
+    
+    .contact-container{
+        margin-left: 20px;
+    }
+
+    .navbar ul {
+        margin-left: -50px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

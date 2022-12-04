@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="order.css">
+
+</head>
+
+<body>
+    <!--  navigation bar section starts here -->
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Start</a></li>
+            <li><a href="chocolates.html">Choklad</a>
+                <ul class="dropdown">
+                    <li><a href="bonbons.html">Praliner</a></li>
+                </ul>
+            </li>
+            <li><a href="other.html">Tillbehör</a>
+                <ul class="dropdown">
+                    <li><a href="other.html#startBrun">Baschoklad</a></li>
+                    <li><a href="other.html#melting">Utrustning</a></li>
+                    <li><a href="other.html#clips">YT-clips</a></li>
+                </ul>
+            </li>
+            <li><a href="aboutShop.html" class="dropbtn">Butiken</a>
+                <ul class="dropdown">
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </li>
+            <li><a href="order.html">Kassan</a>
+                <ul class="dropdown">
+                    <li><a href="terms.html">Villkor</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="icons">
+            <span>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="order.html" class="fas fa-shopping-cart"></a>
+                <a href="contact.html" class="fas fa-user"></a>
+            </span>
+        </div>
+    </nav>
+    <!--  navigation bar section  ends  here  -->
+
+    <header>
+        <div id="order">
+            <p>Om något saknas kan du lägga i varukorgen igen.</p>
+        </div>
+        <div class="search-box">
+            <input class="search-txt" type="text" name="search" placeholder="Sök här">
+            <a class="search-btn" href="https://www.google.com/search">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <form id="orderForm" name="orderForm" method="post">
+            <section id="product">
+                <input type="hidden" name="article" value="12345">
+                <ul>
+                    <li id="items">
+                        <h2>Beställda varor</h2>
+                    </li>
+                    <li>Chokladask Hjärta | antal: 1 st</li>
+                    <li>Chokladpraliner lösvikt | vikt: 500gram</li>
+                    <li>Presentkartong: | antal: 1 st</li>
+                </ul>
+            </section>
+
+            <fieldset id="orderInfo">
+                <legend>Leverans</legend>
+                <label>*Beställningsdatum <input type="date" name="date-of-order" required></label>
+            </fieldset>
+
+            <fieldset id="receiver-info">
+                <legend>Mottagare </legend>
+                <div class="columns">
+                    <label for="rec-name">* Namn: </label>
+                    <input type="text" name="rec-name" id="rec-name" required>
+                    <label for="rec-adr">* Gatuadress: </label>
+                    <input type="text" name="rec-adr" id="rec-adr" required>
+                    <label for="zip-code">* Postnr: </label>
+                    <input type="text" name="zip-code" id="zip-code" required>
+                    <label for="rec-city">* Ort: </label>
+                    <input type="text" name="rec-city" id="rec-city" required>
+                    <label for="rec-phone">Telefon: </label>
+                    <input type="text" name="rec-phone" id="rec-phone">
+                </div>
+            </fieldset>
+
+            <fieldset id="card">
+                <legend>Kort</legend>
+                <label>* Antal tecken på kortet: 250:
+                    <textarea name="card" required></textarea>
+                </label>
+            </fieldset>
+
+            <fieldset id="client">
+                <legend>Dina uppgifter</legend>
+                <div class="columns">
+                    <label for="cli-name">* Namn: </label>
+                    <input type="text" name="cli-name" id="cli-name" required>
+                    <label for="cli-email">* Epost: </label>
+                    <input type="text" name="cli-email" id="cli-email" required>
+                    <label for="cli-phone">Telefon: </label>
+                    <input type="text" name="cli-phone" id="cli-phone">
+                </div>
+            </fieldset>
+
+            <fieldset id="payment">
+                <legend>Betalning</legend>
+                <div id="payola">
+                    <h4>Betala med kort eller faktura</h4>
+                    <label id="credit">
+                        <input type="radio" name="payment" checked="checked"> Kreditkort
+                        <img id="pay" src="/images/card_img.png" alt="">
+                    </label>
+
+                    <label id="invoice">
+                        <input type="radio" name="payment"> Faktura
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset id="terms">
+                <legend>Bekräfta</legend>
+
+                <label id="acc-terms">* <input type="checkbox" name="accept-terms" required><a href="terms.html">Läs villkoren</a>
+                </label>
+            </fieldset>
+        </form>
+    </main>
+
+
+    <footer>
+
+        <div class="container-footer">
+            <div class="col-3">
+                <h3>KONTAKT</h3>
+                <ul class="adr">
+                    <li>
+                        <span>The Chocolate Box,<br>
+                            The Shambles, <br>
+                            W123CD<br>
+                            YORK,<br>
+                            ENGLAND
+                        </span>
+                    </li>
+                </ul>
+
+                <h3 id="time">ÖPPETTIDER</h3>
+                <ul id="open">
+                    <li>Mån-fre: 08.00 - 20.00</li>
+                    <li>Lör: 09.00 - 19.00</li>
+                    <li>Sön: 10.00 - 16.00</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container-footer">
+            <div class="col-1">
+                <h3>SNABBLÄNKAR</h3>
+                <a href="contact.html">Kontakt</a>
+                <a href="#">Order</a>
+                <a href="#">Tillbehör</a>
+                <a href="#">Butiken</a>
+                <a href="#">Blog</a>
+            </div>
+        </div>
+
+        <div class="container-footer">
+            <div class="col-2">
+                <h3>NYHETSBREV</h3>
+                <div class="footer-mail">
+                    <input type="email" placeholder="Din Epost Adress" required><br>
+                    <button class="foot-btn" type="submit">Prenumerera Nu</button>
+                </div>
+
+                <div class="social-icons-footer">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-google"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-footer">
+            <div class="col-4">
+                <h3>HITTA OSS</h3>
+                <div class="map1">
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1667594417583!6m8!1m7!1souaop5NrAioAPcZd9mfuRw!2m2!1d53.95965010526269!2d-1.080209805556622!3f141.69181824272496!4f-1.664995586398419!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="map2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.4289955464387!2d-1.0822477841559415!3d53.95964928011217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487931af5b058303%3A0xef331bbaef590b36!2s7%20Shambles%2C%20York%20YO1%207LZ%2C%20Storbritannien!5e0!3m2!1ssv!2sse!4v1667593359056!5m2!1ssv!2sse" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

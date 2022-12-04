@@ -1,0 +1,505 @@
+@charset "UTF-8";
+
+html {
+    font-size: 16px;
+    font-family: 'Fira sans', sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-image: url(/imgTest/dripChoc.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content min-content 80% min-content;
+    grid-template-areas:
+        "   nav     nav   "
+        " header   header "
+        "  main     aside  "
+        " footer   footer ";
+}
+
+.navbar {
+    grid-area: nav;
+    width: 100%;
+    display: flex;
+    background-image: -webkit-linear-gradient(#462523 0%,
+            #cb9b51 22%,
+            #f6e27a 45%,
+            #f6f2c0 50%,
+            #f6e27a 55%,
+            #cb9b51 78%,
+            #462523 100%);
+    height: 55px;
+    justify-content: center;
+}
+
+main {
+    grid-area: main;
+    height: 100%;
+}
+
+.line {
+    grid-area: main;
+    height: 10px;
+    bottom: 0;
+}
+
+header {
+    grid-area: header;
+}
+
+header #logo {
+    width: 85px;
+    position: fixed;
+}
+
+header #rapport{
+    padding-left: 80px;
+    font-size: 20px;
+    color:#e84393;
+}
+
+header #Rubrik span {
+
+    font-style: italic;
+    font-size: 4.5rem;
+    color: transparent;
+    position: absolute;
+    top: 25%;
+    left: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 2px;
+    font-weight: bold;
+    background-image: linear-gradient(to right,
+            #462523 0%,
+            #cb9b51 22%,
+            #f6e27a 45%,
+            #f6f2c0 50%,
+            #f6e27a 55%,
+            #cb9b51 78%,
+            #462523 100%);
+    -webkit-background-clip: text;
+}
+
+.navbar ul {
+    display: flex;
+    border-top: 0;
+    padding: 0;
+    margin-top: 3px;
+    gap: 50px;
+    list-style-type: none;
+}
+
+.navbar li a {
+    display: flex;
+    margin: 10px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #462523;
+    text-decoration: none;
+
+}
+
+.navbar li a {
+    color: #462523;
+}
+
+.navbar li a:hover {
+    color: #e84393;
+}
+
+.navbar .icons {
+    display: inline-flex;
+}
+
+.navbar .icons a {
+    margin-top: 15px;
+    font-size: 1.3rem;
+    color: #333;
+    margin-left: 2rem;
+    text-decoration: none;
+}
+
+.navbar .icons a:hover {
+    color: #e84393;
+}
+
+.navbar .icons .fa-heart {
+    color: #e84393;
+}
+
+/*-------DropDown-submenu--*/
+
+
+ul li ul.dropdown li {
+    display: block;
+    border-bottom: 2px dotted;
+}
+
+ul li ul.dropdown {
+    position: absolute;
+    margin-top: -9px;
+    align-items: center;
+    z-index: 999;
+    display: none;
+    transition: 2s;
+    margin-left: 7px;
+}
+
+ul.dropdown a {
+    font-size: 1.3rem;
+    justify-content: center;
+    color: pink;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+    color: pink;
+}
+
+/*-------submenu--end---------*/
+
+/*-----Search-bar-------*/
+
+.search-box {
+    float: right;
+    height: 30px;
+    border-color: #cb9b51;
+    outline: none;
+    border-radius: 40px;
+    background-image: linear-gradient(to top,
+            #462523 0%,
+            #cb9b51 22%,
+            #f6e27a 45%,
+            #f6f2c0 50%,
+            #f6e27a 55%,
+            #cb9b51 78%,
+            #462523 100%);
+    padding: 10px;
+}
+
+.search-box input #placeholder {
+    font-size: 25px;
+
+}
+
+.search-box:hover>.search-txt {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.search-box:hover>.search-btn {
+    background-image: linear-gradient(to left,
+            hotpink,
+            antiquewhite);
+}
+
+.search-btn {
+    cursor: pointer;
+    float: right;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-image: linear-gradient(to left,
+            hotpink,
+            antiquewhite);
+    margin-top: -2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    text-decoration: none;
+    font-size: 23px;
+    color: #cb9b51;
+}
+
+.search-txt {
+    border: none;
+    margin-top: -6px;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: #462523;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+}
+
+.searchbar .fa {
+    font-size: 20px;
+}
+
+
+/*--------Aside-------------*/
+
+aside #rubrik2 h2 {
+    margin-top: 300px;
+    grid-area: aside;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: transparent;
+    font-family: 'Fira sans', sans-serif;
+    letter-spacing: 3px;
+    font-weight: bold;
+    background-image: linear-gradient(to right,
+            #cb9b51 22%,
+            #f6e27a 45%,
+            #f6f2c0 50%,
+            #f6e27a 55%,
+            #cb9b51 78%);
+    -webkit-background-clip: text;
+}
+
+/* gul varning men fungerar på de flesta läsare - kollat*/
+
+aside #rubrik2 .fas {
+    cursor: pointer;
+    color: #ff68b3;
+    text-decoration: none;
+}
+
+aside #rubrik2 .fas:hover {
+
+    color: #cb9b51;
+}
+
+footer {
+    grid-area: footer;
+    position: relative;
+    margin-top: 150px;
+    width: 90%;
+    padding: 5%;
+    display: grid;
+    grid-template-columns: 20% 20% 25% 25%;
+    grid-gap: 15px;
+    /*  background:rgba(255, 192, 203, 0.3);*/
+    color: #efefef;
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content: end;
+    align-content: end;
+    border-top: 10px solid pink;
+
+}
+
+
+.col-1 a {
+    display: block;
+    text-decoration: none;
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.col-2 a {
+    text-decoration: none;
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.container-footer .col-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.adr {
+    list-style-type: none;
+    padding: 0;
+    margin-top: -2px;
+}
+
+.col-3 .adr li span {
+    line-height: 1.7rem;
+}
+
+.col-3 #time{
+    padding-top: 15px;
+ }
+ 
+ .col-3 ul{
+    padding-left:0; 
+    margin-top:0; 
+ }
+
+ .col-3 #open li{
+    list-style-type: none;
+    line-height: 1.7rem;
+ }
+ 
+
+.footer div {
+
+    text-align: center;
+}
+
+.footer div h3 {
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.map1 {
+    margin-bottom: 5%;
+}
+
+.map1,
+.map2,
+iframe {
+    width: 250px;
+    height: 125px;
+    display: inline-block;
+}
+
+
+.footer-mail input {
+    width: 220px;
+    height: 45px;
+    border-radius: 4px;
+    text-align: left;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    outline: none;
+    border: none;
+    cursor: text;
+}
+
+.footer-mail .foot-btn {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.social-icons-footer {
+    margin-top: 30px;
+}
+
+.social-icons-footer i {
+    font-size: 22px;
+    margin: 10px;
+    cursor: pointer;
+    color: pink;
+    font-weight: bold;
+}
+
+
+/* ---------  Media Queries starts here ----------- */
+
+@media (max-width: 1000px) {
+
+    footer {
+        grid-template-columns: 1fr 1fr;
+        flex-wrap: wrap;
+        padding-left: 150px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+
+    .navbar ul {
+        gap: 40px;
+        transition: .1s linear;
+        margin-top: 5px;
+    }
+
+    .navbar li a {
+        font-size: 1.4rem;
+        transition: .1s linear;
+    }
+
+    footer {
+        grid-template-columns: 1fr 1fr;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .navbar ul {
+        gap: 30px;
+        transition: .1s linear;
+        margin-top: 4.5px;
+    }
+
+    .navbar li a {
+        font-size: 1.3rem;
+        transition: .1s linear;
+    }
+
+    footer {
+        padding-left: 100px;
+    }
+}
+
+
+@media screen and (max-width:600px) {
+
+    .navbar ul {
+        gap: 10px;
+        margin-top: 8px;
+        transition: .1s linear;
+    }
+
+    .navbar ul {
+        gap: 15px;
+        margin-top: 8px;
+        transition: .1s linear;
+    }
+
+    .navbar li a {
+        font-size: 1rem;
+        transition: .1s linear;
+    }
+
+    .navbar .icons .fa-user {
+        display: none;
+    }
+
+    .navbar .icons .fa-shopping-cart {
+        display: none;
+    }
+
+    .navbar .icons .fa-heart {
+        display: none;
+    }
+
+    .search-box .search-txt {
+    font-size: 14px;
+    }
+
+    footer {
+        padding-left: 50px;
+    }
+}
+
+@media (max-width: 570px) {
+    footer {
+        grid-template-columns: 100%;
+        flex-wrap: wrap;
+
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .navbar ul {
+        gap: 5px;
+    }
+}
