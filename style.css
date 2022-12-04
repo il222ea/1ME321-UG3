@@ -27,6 +27,7 @@ body {
         " header   header "
         "  main     aside  "
         " footer   footer ";
+        overflow-x:hidden;
 }
 
 .navbar {
